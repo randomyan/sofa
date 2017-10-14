@@ -67,15 +67,14 @@ endif()
         file(COPY ${sharedObject} DESTINATION "${SOFA_BIN_DIR}")
     endforeach()
 
-    file(COPY "${HAPI_DIR}/External/bin/pthreadVC2.dll" DESTINATION "${SOFA_BIN_DIR}")
-    file(COPY "${HAPI_DIR}/External/bin/FreeImage.dll" DESTINATION "${SOFA_BIN_DIR}")
+    file(COPY "${HAPI_DIR}/External/lib64/pthreadVC2.dll" DESTINATION "${SOFA_BIN_DIR}")
+    file(COPY "${HAPI_DIR}/External/lib64/FreeImage.dll" DESTINATION "${SOFA_BIN_DIR}")
 
     # file(COPY "${HAPI_DIR}/bin/HAPI_*.dll" DESTINATION ${SOFA_BIN_DIR})
     # file(COPY "${HAPI_DIR}/bin/H3DUtil_*.dll" DESTINATION ${SOFA_BIN_DIR})
     # file(COPY "${HAPI_DIR}/External/bin/pthreadVC2.dll" DESTINATION ${SOFA_BIN_DIR})
     # file(COPY "${HAPI_DIR}/External/bin/FreeImage.dll" DESTINATION ${SOFA_BIN_DIR})
 
-endif()
 
 add_library(${PROJECT_NAME} SHARED ${HEADER_FILES} ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} PUBLIC SofaUserInteraction SofaHaptics ${HAPI_LIBRARIES} ${H3DUTIL_LIBRARIES})

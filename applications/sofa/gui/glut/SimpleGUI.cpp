@@ -41,7 +41,7 @@
 #include <sofa/helper/system/thread/CTime.h>
 
 #include <sofa/defaulttype/RigidTypes.h>
-#include <sofa/defaulttype/LaparoscopicRigidTypes.h>
+#include <SofaGeneralRigid/LaparoscopicRigidMapping.h>
 #include <sofa/defaulttype/BoundingBox.h>
 #include <sofa/core/ObjectFactory.h>
 

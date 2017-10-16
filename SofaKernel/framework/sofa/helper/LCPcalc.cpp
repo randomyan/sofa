@@ -517,6 +517,17 @@ void afficheLCP(double *q, double **M, double *f, int dim)
 
 }
 
+void afficheResult(double *f, int dim)
+{
+	int compteur;
+	// affichage de f
+	printf("f = [");
+	for (compteur = 0; compteur<dim; compteur++)
+	{
+		printf("\t%.9f\n", f[compteur]);
+	}
+	printf("      ];\n\n");
+}
 
 void resultToString(ostream& s, double *f, int dim)
 {

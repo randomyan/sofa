@@ -26,7 +26,7 @@
 
 #include "PersistentContactMapping.h"
 #include <PersistentContact/config.h>
-
+#include <sofa/helper/StateMask.h>
 namespace sofa
 {
 
@@ -81,9 +81,9 @@ public:
 
     PersistentContactBarycentricMapperMeshTopology(core::topology::BaseMeshTopology* fromTopology,
             topology::PointSetTopologyContainer* toTopology,
-            helper::ParticleMask *_maskFrom,
-            helper::ParticleMask *_maskTo)
-        : BarycentricMapperMeshTopology<TIn, TOut>(fromTopology, toTopology, _maskFrom, _maskTo)
+            helper::StateMask *_maskFrom,
+            helper::StateMask *_maskTo)
+        : BarycentricMapperMeshTopology<TIn, TOut>(fromTopology, toTopology)
     {
     }
 
@@ -116,9 +116,9 @@ public:
 
     PersistentContactBarycentricMapperSparseGridTopology(topology::SparseGridTopology* fromTopology,
             topology::PointSetTopologyContainer* toTopology,
-            helper::ParticleMask *_maskFrom,
-            helper::ParticleMask *_maskTo)
-        : BarycentricMapperSparseGridTopology<TIn, TOut>(fromTopology, toTopology, _maskFrom, _maskTo)
+            helper::StateMask *_maskFrom,
+            helper::StateMask *_maskTo)
+        : BarycentricMapperSparseGridTopology<TIn, TOut>(fromTopology, toTopology)
     {
     }
 
@@ -158,9 +158,9 @@ public:
 
     PersistentContactBarycentricMapperTetrahedronSetTopology(topology::TetrahedronSetTopologyContainer* fromTopology,
             topology::PointSetTopologyContainer* toTopology,
-            helper::ParticleMask *_maskFrom,
-            helper::ParticleMask *_maskTo)
-        : BarycentricMapperTetrahedronSetTopology<TIn, TOut>(fromTopology, toTopology, _maskFrom, _maskTo)
+            helper::StateMask *_maskFrom,
+            helper::StateMask *_maskTo)
+        : BarycentricMapperTetrahedronSetTopology<TIn, TOut>(fromTopology, toTopology)
     {
     }
 

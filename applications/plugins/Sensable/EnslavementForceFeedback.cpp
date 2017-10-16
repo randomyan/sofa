@@ -44,7 +44,7 @@ namespace controller
 
     void EnslavementForceFeedback::init()
     {
-        this->ForceFeedback::init();
+        
         this->ContactListener::init();
     }
 

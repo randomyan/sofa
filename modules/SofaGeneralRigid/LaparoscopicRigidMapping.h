@@ -38,7 +38,7 @@ namespace component
 
 namespace mapping
 {
-
+	using namespace sofa::defaulttype;
 template <class TIn, class TOut>
 class LaparoscopicRigidMapping : public core::Mapping<TIn, TOut>
 {

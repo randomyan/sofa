@@ -415,14 +415,14 @@ RealGUI::RealGUI ( const char* viewername, const std::vector<std::string>& optio
     interactionButton->setCheckable(true);
     interactionButton->setStyleSheet("background-color: cyan;");
 
-    gridLayout->addWidget(interactionButton, 3, 0, 1, 1);
-    gridLayout->removeWidget(screenshotButton);
-    gridLayout->addWidget(screenshotButton, 3, 1, 1,1);
+    _14->addWidget(interactionButton, 3, 0, 1, 1);
+    _14->removeWidget(screenshotButton);
+    _14->addWidget(screenshotButton, 3, 1, 1,1);
 
-    interactionButton->setText(QSOFAApplication::translate("GUI", "&Interaction", 0));
-    interactionButton->setShortcut(QSOFAApplication::translate("GUI", "Alt+i", 0));
+    interactionButton->setText(QSOFAApplication::translate("GUI", "&Interaction"));
+    interactionButton->setShortcut(QSOFAApplication::translate("GUI", "Alt+i"));
 #ifndef QT_NO_TOOLTIP
-    interactionButton->setProperty("toolTip", QVariant(QSOFAApplication::translate("GUI", "Start interaction mode", 0)));
+    interactionButton->setProperty("toolTip", QVariant(QSOFAApplication::translate("GUI", "Start interaction mode")));
 #endif
 
     connect ( interactionButton, SIGNAL ( toggled ( bool ) ), this , SLOT ( interactionGUI ( bool ) ) );
@@ -2027,7 +2027,7 @@ void RealGUI::interactionGUI ( bool value )
 
     if(value)
     {
-        interactionButton->setText(QSOFAApplication::translate("GUI", "ESC to qu&it", 0));
+        interactionButton->setText(QSOFAApplication::translate("GUI", "ESC to qu&it"));
         this->grabMouse();
         this->grabKeyboard();
         this->setMouseTracking(true);
@@ -2038,7 +2038,7 @@ void RealGUI::interactionGUI ( bool value )
     }
     else
     {
-        interactionButton->setText(QSOFAApplication::translate("GUI", "&Interaction", 0));
+        interactionButton->setText(QSOFAApplication::translate("GUI", "&Interaction"));
         this->releaseKeyboard();
         this->releaseMouse();
         this->setMouseTracking(false);

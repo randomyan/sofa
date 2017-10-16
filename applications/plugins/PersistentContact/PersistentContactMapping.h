@@ -26,7 +26,8 @@
 
 #include <sofa/defaulttype/VecTypes.h>
 #include <iostream>
-
+#define SOFA_FLOAT
+#define SOFA_DOUBLE
 namespace sofa
 {
 

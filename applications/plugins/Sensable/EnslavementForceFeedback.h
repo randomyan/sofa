@@ -37,11 +37,12 @@ namespace component
 
 namespace controller
 {
-class EnslavementForceFeedback : public virtual core::collision::ContactListener, public sofa::component::controller::ForceFeedback
+class EnslavementForceFeedback : public virtual core::collision::ContactListener
 {
 public:
-    SOFA_CLASS2(EnslavementForceFeedback, core::collision::ContactListener, sofa::component::controller::ForceFeedback);
+    SOFA_CLASS(EnslavementForceFeedback, core::collision::ContactListener);
 
+	using core::collision::ContactListener::create;
 	EnslavementForceFeedback( core::CollisionModel* collModel1 = NULL, core::CollisionModel* collModel2 = NULL );
 
     ~EnslavementForceFeedback(){}
@@ -59,7 +60,7 @@ protected:
     Data<bool> normalsPointOut;
     Data<double> contactScale;
     Data<double> penOffset;
-
+	ForceFeedback * m_forceFeedback;
 
 };
 

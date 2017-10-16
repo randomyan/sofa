@@ -14,11 +14,14 @@
 
 typedef sofa::component::container::MechanicalObject<sofa::defaulttype::Rigid3Types> MechanicalObjectRigid3;
 
-typedef sofa::defaulttype::Vector3 Vec3;
+
 
 using namespace sofa::PrimitiveCreationTest;
 using sofa::core::objectmodel::New;
 using sofa::core::objectmodel::Data;
+
+using sofa::PrimitiveCreationTest::Vec3;
+
 
 struct BCD_test : public ::testing::Test{
 

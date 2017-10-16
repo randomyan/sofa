@@ -36,6 +36,7 @@ namespace component
 
 namespace mapping
 {
+	typedef core::topology::BaseMeshTopology::Tetrahedron Tetrahedron;
 
 template <class In, class Out>
 int PersistentContactBarycentricMapperMeshTopology<In,Out>::addContactPointFromInputMapping(const InVecDeriv& in, const sofa::defaulttype::Vector3& _pos, std::vector< std::pair<int, double> > & /*baryCoords*/)
@@ -320,7 +321,7 @@ int PersistentContactBarycentricMapperTetrahedronSetTopology<In,Out>::addContact
         std::cout << "addContactPointFromInputMapping " << pos << std::endl;
     }
 
-    const sofa::helper::vector<topology::Tetrahedron>& tetrahedra = this->fromTopology->getTetrahedra();
+    const sofa::helper::vector<Tetrahedron>& tetrahedra = this->fromTopology->getTetrahedra();
 
     sofa::helper::vector<defaulttype::Matrix3> bases;
     sofa::helper::vector<defaulttype::Vector3> centers;
@@ -487,8 +488,8 @@ void PersistentContactBarycentricMapping<TIn, TOut>::createPersistentMapperFromT
     BaseMechanicalState *dofFrom = static_cast< simulation::Node* >(this->fromModel->getContext())->mechanicalState;
     BaseMechanicalState *dofTo = static_cast< simulation::Node* >(this->toModel->getContext())->mechanicalState;
 
-    helper::ParticleMask *maskFrom = &dofFrom->forceMask;
-    helper::ParticleMask *maskTo = NULL;
+    helper::StateMask *maskFrom = &dofFrom->forceMask;
+    helper::StateMask *maskTo = NULL;
 
     if (dofTo)
         maskTo = &dofTo->forceMask;
